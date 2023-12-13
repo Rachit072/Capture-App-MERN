@@ -3,14 +3,15 @@ import capture from './images/capture.png';
 import { Container,Typography,AppBar, Grow,Grid} from '@mui/material';
 import Posts from './components/Posts/Posts';
 import Form from './components/Form/Form';
-
+import './App.css';
 
 const App=()=>{
+    
     return (
         <Container maxidth='lg'>
-            <AppBar position='static' color='inherit'>
-                <Typography align='center' variant='h2' >Capture</Typography>
-                <img src={capture} alt="capture" height={160} />
+            <AppBar className='appBar' position='static' color='inherit'>
+                <Typography className='heading' align='center' variant='h2' >Capture</Typography>
+                <div><img className='image' src={capture} alt="capture" width={100} /></div>
             </AppBar>
             <Grow in>
                 <Container>
