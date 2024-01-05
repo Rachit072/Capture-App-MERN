@@ -20,3 +20,7 @@
 .justify-space-between {
   justify-content: space-between;
 }
+
+.maincontainer.mobile{
+    flex-direction: column-reverse;
+}

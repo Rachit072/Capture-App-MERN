@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import capture from './images/capture.png';
-import { Container,Typography,AppBar, Grow,Grid} from '@mui/material';
+import { Container,Typography,AppBar, Grow,Grid, useMediaQuery} from '@mui/material';
 import Posts from './components/Posts/Posts';
 import Form from './components/Form/Form';
 import {getPosts} from './components/actions/posts';
@@ -10,6 +10,7 @@ import {useDispatch} from 'react-redux';
 const App=()=>{
     const [currentId,setCurrentId] = useState(null);
     const dispatch = useDispatch();
+    const isMobile = useMediaQuery ('(max-width:600px)');
     useEffect(()=>{
         dispatch(getPosts());
     },[dispatch])
@@ -22,7 +23,7 @@ const App=()=>{
             </AppBar>   
             <Grow in>
                 <Container>
-                    <Grid  container justify="space-between" alignItems="stretch" spacing={3}>
+                    <Grid className={`maincontainer ${isMobile ? 'mobile' : ''}`} container justify="space-between" alignItems="stretch" spacing={3}>
                         <Grid item xs={12} sm={7}>
                             <Posts setCurrentId={setCurrentId}/>
                         </Grid>

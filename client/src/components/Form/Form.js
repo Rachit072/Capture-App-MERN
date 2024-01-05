@@ -44,12 +44,12 @@ export default function Form({currentId,setCurrentId}) {
             onChange={(e)=>setPostData({...postData,message:e.target.value})}
           />
           <TextField className='TextField-root' name='tags' variant='outlined' label='tags' fullWidth  value={postData.tags}
-            onChange={(e)=>setPostData({...postData,tags:e.target.value})}
+            onChange={(e)=>setPostData({...postData,tags:e.target.value.split(',')})}
           />
           <div className='fileInput'>
             <FileBase type='file' multiple={false} onDone={({base64})=>setPostData({...postData,selectedFile:base64})}>SelectFile</FileBase> 
           </div>
-          <Button className='buttonSubmit' variant='contained' size='large' color='primary' type='submit' fullWidth>Submit</Button>
+          <Button className='buttonSubmit' style={{marginBottom:"10px"}} variant='contained' size='large' color='primary' type='submit' fullWidth>Submit</Button>
           <Button variant='contained' size='small' color='secondary'  onClick={clear} fullWidth>Clear</Button>
         </form>
     </Paper>
