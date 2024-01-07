@@ -1,0 +1,21 @@
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .contact-heading {
+    color: #007bff;
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  
+  .contact-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .contact-list-item {
+    margin-bottom: 8px;
+  }
+  

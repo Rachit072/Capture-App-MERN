@@ -33,7 +33,7 @@ export default function Form({currentId,setCurrentId}) {
   return (
     <Paper className='paper' >
         <form autoComplete='off' className='root form' noValidate onSubmit={handleSubmit}>
-          <Typography variant='h6'>{currentId ? 'Editing' : 'Creating'} a Memory</Typography>
+          <Typography variant='h6'>{currentId ? 'Editing' : 'Creating'} a Post</Typography>
           <TextField className='TextField-root' name='creator' variant='outlined' label='creator' fullWidth  value={postData.creator}
             onChange={(e)=>setPostData({...postData,creator:e.target.value})}
           />

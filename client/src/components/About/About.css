@@ -1,0 +1,16 @@
+.about-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .about-heading {
+    color: #007bff;
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  
+  .about-paragraph {
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+  

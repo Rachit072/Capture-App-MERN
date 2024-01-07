@@ -1,0 +1,31 @@
+.appBar {
+    margin: 0px 0px 30px 0px; 
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .heading {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    color: rgba(0, 183, 255, 1);
+  }
+  
+  .image {
+    margin-left: 15px;
+    padding: 10px;
+  }
+  .flex{
+    display: flex;
+  }
+  .justify-space-between {
+    justify-content: space-between;
+  }
+  .link{
+    text-decoration: none;
+    color: inherit;
+  }
+  
