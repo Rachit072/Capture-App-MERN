@@ -33,7 +33,7 @@ export default function Form({currentId,setCurrentId}) {
   return (
     <Paper className='paper' >
         <form autoComplete='off' className='root form' noValidate onSubmit={handleSubmit}>
-          <Typography variant='h6'>{currentId ? 'Editing' : 'Creating'} a Post</Typography>
+          <Typography variant='h6'>{currentId ? 'Editing' : 'Create'} a Post</Typography>
           <TextField className='TextField-root' name='creator' variant='outlined' label='creator' fullWidth  value={postData.creator}
             onChange={(e)=>setPostData({...postData,creator:e.target.value})}
           />
@@ -49,7 +49,7 @@ export default function Form({currentId,setCurrentId}) {
           <div className='fileInput'>
             <FileBase type='file' multiple={false} onDone={({base64})=>setPostData({...postData,selectedFile:base64})}>SelectFile</FileBase> 
           </div>
-          <Button className='buttonSubmit' style={{marginBottom:"10px"}} variant='contained' size='large' color='primary' type='submit' fullWidth>Submit</Button>
+          <Button className='buttonSubmit' style={{marginBottom:"10px"}} variant='contained' size='large' color='primary' type='submit' fullWidth>Create</Button>
           <Button variant='contained' size='small' color='secondary'  onClick={clear} fullWidth>Clear</Button>
         </form>
     </Paper>

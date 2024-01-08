@@ -20,10 +20,10 @@ const App=()=>{
             <Grow in>
                 <Container>
                     <Grid className={`maincontainer ${isMobile ? 'mobile' : ''}`} container justify="space-between" alignItems="stretch" spacing={2}>
-                        <Grid item xs={12} sm={7}>
+                        <Grid item xs={12} sm={8}>
                             <Posts setCurrentId={setCurrentId}/>
                         </Grid>
-                        <Grid item xs={12} sm={4}>
+                        <Grid item xs={12} sm={4} sx={{ position: !isMobile ? 'fixed' : 'relative', top: !isMobile ? '72px' : 'auto', right: !isMobile ? '20px' : 'auto' }}>
                             <Form currentId={currentId} setCurrentId={setCurrentId}/>
                         </Grid>
                     </Grid>
