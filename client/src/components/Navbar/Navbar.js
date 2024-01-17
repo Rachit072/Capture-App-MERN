@@ -1,26 +1,26 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import capture from '../../images/capture.png';
-import {Typography,AppBar,Box,Drawer, List, ListItem, useMediaQuery} from '@mui/material';
+import {Typography,AppBar,Box,Drawer, List, ListItem, useMediaQuery, Toolbar, Button, Avatar} from '@mui/material';
 import IconButton from '@mui/material/IconButton';
-import AccountCircle from '@mui/icons-material/AccountCircle';
 import MenuIcon from '@mui/icons-material/Menu';
-import './Header.css';
+import './Navbar.css';
   
-const Header = () => {
+const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState (false);
   const isMobile = useMediaQuery ('(max-width:600px)');
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
   };
+  const user = null;
  
   return (
     <Box sx={{ flexGrow: 1}} >
      <AppBar className='appBar' style={{flexDirection:'row'}} position='static' color='inherit'>
                 <Box style={{display:'flex', flexDirection:'row'}}>
                     <img className='image' src={capture} alt="capture" width={40} />
-                    <Typography className='heading' variant='h6'fontFamily={'monospace'} >Capture</Typography>
+                    <Typography component={Link} to='/' className='heading' variant='h6'fontFamily={'monospace'} >Capture</Typography>
                 </Box>
                 <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ ml:2,pt:2, display: { xs: 'block', md: 'none' } }} onClick={toggleMobileMenu}>
                   <MenuIcon />
@@ -57,21 +57,21 @@ const Header = () => {
                         <Typography sx={{ mr: 3 }} className='heading' variant='h6' fontFamily={'monospace'}>Contact Us</Typography>
                     </Link>
                 </Box>
-                <IconButton
-                    size="large"
-                    edge="end"
-                    aria-label="account of current user"
-                    aria-haspopup="true"
-                    onClick={()=>{}}
-                    color="inherit"
-                    sx={{mr:3,mt:0.5}}
-                    >
-                    <Link className='link' to='/login'><AccountCircle /></Link>
-                </IconButton>
+                <Toolbar className='toolbar'>
+                  {user ? (
+                    <div className='profile'>
+                      <Avatar className='purple'>{user?.result?.name.charAt(0)}</Avatar>
+                      <Typography className='userName' variant='h6'>{user?.result?.name}</Typography>
+                      <Button className='logout' variant='contained' color='secondary'>Logout</Button>
+                    </div>
+                  ):(
+                  <Button variant='contained' color='primary' component={Link} to='/login'>SignUp</Button>
+                  )}
+                </Toolbar>
                 </Box>
             </AppBar> 
     </Box>
   )
 }
 
-export default Header
+export default Navbar

@@ -7,17 +7,20 @@ import reducers from '../src/components/reducers';
 import thunk from 'redux-thunk'; 
 import './index.css';
 import Login from './components/Login/Login';
-import Header from './components/Header/Header';
 import { createBrowserRouter, RouterProvider,Outlet } from 'react-router-dom';
 import Contact from './components/Contact/Contact';
 import About from './components/About/About';
+import Navbar from './components/Navbar/Navbar';
+import { GoogleOAuthProvider } from '@react-oauth/google';
 
 const store = createStore(reducers, compose(applyMiddleware(thunk)));
 const MyApp=()=>{
-  return <Provider store={store}>
-    <Header/>
-    <Outlet />
-  </Provider>
+  return <GoogleOAuthProvider clientId='939442672238-rt7m43nm8hqi33kvr3nok1vfkdp52p93.apps.googleusercontent.com'>
+    <Provider store={store}>
+      <Navbar/>
+      <Outlet />
+    </Provider>
+  </GoogleOAuthProvider>
 };
 
 const appRouter = createBrowserRouter([
