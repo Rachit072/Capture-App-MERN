@@ -8,7 +8,7 @@ import {useDispatch} from 'react-redux';
 
 const App=()=>{
 
-    const [currentId,setCurrentId] = useState(null);
+    const [currentId,setCurrentId] = useState(0);
     const dispatch = useDispatch();
     const isMobile = useMediaQuery ('(max-width:600px)');
     useEffect(()=>{
