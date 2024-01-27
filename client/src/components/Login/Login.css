@@ -1,6 +1,6 @@
 .loginContainer{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     
 }
@@ -14,6 +14,11 @@
     margin-top: 2%;
     width: 100%;
     padding: 50px;
+}
+.login-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .loginInput{
     padding: 8px;
