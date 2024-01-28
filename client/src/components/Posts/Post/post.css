@@ -43,11 +43,14 @@
 .details {
   display: flex;
   justify-content: space-between;
-  margin: 20px;
+  margin: 10px;
 }
 
 .title {
   padding: 0 16px;
+}
+.tag {
+  padding: 0 6px;
 }
 
 .cardActions {

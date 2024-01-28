@@ -13,7 +13,7 @@ function Posts({setCurrentId}) {
     !posts.length?<Shimmer/>:
       <Grid className='container' container alignItems='stretch' spacing={3}>
         {posts.map((post)=>(
-          <Grid  key={post._id} item xs={12} sm={6}>
+          <Grid  key={post._id} item xs={12} sm={4}>
             <Post post={post} setCurrentId={setCurrentId}/>
           </Grid>
         ))}
