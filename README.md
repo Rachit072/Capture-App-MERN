@@ -7,7 +7,7 @@ Secure user logins. Share moments in posts. Edit and update. Remove unwanted pos
 ## Clone the Repository:
 git clone https://github.com/Rachit072/Capture-App-MERN.git
 ## Navigate to the Project Directory:
-cd lifemoments
+cd Capture-App-MERN
 ## Install Dependencies:
 npm install
 ## Start the App:
