@@ -1,20 +1,29 @@
 import jwt from 'jsonwebtoken';
 
-const auth = async(req,res,next)=>{
+const auth = async (req, res, next) => {
     try {
-        const token = req.headers.authorization.split(" ")[1];
+        const authorizationHeader = req.headers.authorization;
+        if (!authorizationHeader) {
+            return res.status(401).json({ message: 'Unauthorized - No Authorization header' });
+        }
+
+        const token = authorizationHeader.split(" ")[1];
         const isCustomAuth = token.length < 500;
         let decodedData;
-        if(token && isCustomAuth){
-            decodedData = jwt.verify(token,'test');
+
+        if (token && isCustomAuth) {
+            decodedData = jwt.verify(token, 'test');
             res.userId = decodedData?.id;
-        } else{
+        } else {
             decodedData = jwt.decode(token);
             res.userId = decodedData?.sub;
         }
+        
         next();
     } catch (error) {
         console.log(error);
+        return res.status(401).json({ message: 'Unauthorized - Invalid token' });
     }
-}
+};
+
 export default auth;

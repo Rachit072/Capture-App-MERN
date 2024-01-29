@@ -5,12 +5,11 @@ import Grid from '@mui/material/Grid';
 export default function Shimmer() {
   return (
     <Grid container spacing={2}>
-      <Grid item xs={6} sx={{mt:5}}>
-        <Skeleton variant="rounded" width="100%" height={300} />
-      </Grid>
-      <Grid item xs={6} sx={{mt:5}}>
-        <Skeleton variant="rounded" width="100%" height={300} />
-      </Grid>
+    {[...Array(9)].map((_, index) => (
+        <Grid key={index} item xs={4}>
+            <Skeleton variant="rounded" width="100%" height={300} />
+        </Grid>
+    ))}
     </Grid>
   );
 }

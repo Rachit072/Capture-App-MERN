@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import capture from '../../images/capture.png';
+import capture from '../../images/capture.gif';
 import {Typography,AppBar,Box,Drawer, List, ListItem, useMediaQuery, Toolbar, Button, Avatar} from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -38,7 +38,7 @@ const Navbar = () => {
     <Box sx={{ flexGrow: 1}} >
      <AppBar className='appBar' style={{flexDirection:'row'}} position='static' color='inherit'>
                 <Box style={{display:'flex', flexDirection:'row'}}>
-                    <img className='image' src={capture} alt="capture" width={40} />
+                    <img className='image' src={capture} alt="capture" width={70} />
                     <Typography component={Link} to='/' className='heading' variant='h6'fontFamily={'monospace'} >Capture</Typography>
                 </Box>
                 <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ ml:2,pt:2, display: { xs: 'block', md: 'none' } }} onClick={toggleMobileMenu}>
