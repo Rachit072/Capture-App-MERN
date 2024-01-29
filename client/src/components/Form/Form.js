@@ -33,7 +33,7 @@ export default function Form({currentId,setCurrentId}) {
   if(!user){
     return (
       <Paper className='paper'>
-          <Typography variant='h6' align='center'>
+          <Typography variant='h6' align='center' color='#6FB7FF'>
             Please Sign In to create a post
           </Typography>
       </Paper>
