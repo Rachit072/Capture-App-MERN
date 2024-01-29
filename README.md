@@ -1,4 +1,4 @@
-# CaptureSocial Media App
+# Capture Social Media App
 ## Introduction
 A platform for sharing noteworthy life events, where users can post and highlight interesting moments from their lives.
 ## Features : 
