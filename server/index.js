@@ -11,7 +11,14 @@ dotenv.config();
 
 app.use(bodyParser.json({limit:"35mb",extended: true}));
 app.use(bodyParser.urlencoded({limit:"35mb",extended: true}));
-app.use(cors());
+app.use((req, res, next) => {
+    res.setHeader('Referrer-Policy', 'no-referrer-when-downgrade');
+    next();
+  });
+app.use(cors({
+    origin: 'https://capture-app-mern.vercel.app/',
+    credentials: true,
+  }));
 
 app.use('/posts',postRoutes);
 app.use('/user',userRoutes);
