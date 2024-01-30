@@ -12,6 +12,7 @@ import Contact from './components/Contact/Contact';
 import About from './components/About/About';
 import Navbar from './components/Navbar/Navbar';
 import { GoogleOAuthProvider } from '@react-oauth/google';
+import Postpage from './components/postPage/postPage';
 
 const store = createStore(reducers, compose(applyMiddleware(thunk)));
 const MyApp=()=>{
@@ -43,6 +44,10 @@ const appRouter = createBrowserRouter([
           {
               path:"/login",
               element:<Login/>,
+          },
+          {
+              path:"/posts/:postId",
+              element:<Postpage/>,
           },
       ]
     }

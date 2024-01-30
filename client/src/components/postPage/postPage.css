@@ -1,0 +1,27 @@
+.custom-post-details {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .custom-card {
+    position: relative;
+  }
+  
+  .custom-media {
+    height: auto;
+  }
+  
+  .custom-tag {
+    font-size: 12px;
+    color: #808080;
+  }
+  
+  .custom-title {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .custom-content {
+    padding: 0px;
+  }
+  

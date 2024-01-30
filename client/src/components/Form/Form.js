@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import {Paper,Typography,TextField,Button} from '@mui/material';
+import {Paper,Typography,TextField,Button,Grid} from '@mui/material';
 import FileBase from 'react-file-base64';
 import './Form.css';
 import { useDispatch } from 'react-redux';
 import { createPost,updatePost } from '../actions/posts';
 import { useSelector } from 'react-redux';
+import {toast, ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Form({currentId,setCurrentId}) {
   const [postData,setPostData] = useState({title:'',message:'',tags:'',selectedFile:''})
@@ -32,12 +34,11 @@ export default function Form({currentId,setCurrentId}) {
   }
   if(!user){
     return (
-      <Paper className='paper'>
-          <Typography variant='h6' align='center' color='#6FB7FF'>
-            Please Sign In to create a post
-          </Typography>
-      </Paper>
-    )
+      <Grid container justify="center" alignItems="center">
+      <Button style={{width:'250px',margin:'23px 50px'}} color='secondary' fullWidth variant='contained'onClick={()=>toast.error('Please Login First')} >Create Post</Button>
+        <ToastContainer/>
+      </Grid>    
+      )
   }
   return (
     <Paper className='paper' >
