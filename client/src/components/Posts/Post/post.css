@@ -60,3 +60,7 @@
   display: flex;
   justify-content: space-between;
 }
+.card-action{
+  display: flex;
+  justify-content: space-between;
+}
