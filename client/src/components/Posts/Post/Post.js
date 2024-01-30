@@ -3,7 +3,9 @@ import {Card,CardMedia,Button,CardActions,CardContent,Typography} from '@mui/mat
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ThumbUpAltOutlinedIcon from '@mui/icons-material/ThumbUpAltOutlined';
 import DeleteIcon from '@mui/icons-material/Delete';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import {Link} from 'react-router-dom';
 import './post.css';
 import moment from 'moment';
 import { useDispatch } from 'react-redux';
@@ -56,7 +58,7 @@ const truncateText = (text, limit) => {
           {truncateText(post.message, 25)} 
         </Typography>
         </CardContent>
-        <CardActions>
+        <CardActions className='card-action'>
           <Button size='medium' color='primary' disabled={!user?.result} onClick={()=>{dispatch(likePost(post._id ))}}>
             <Likes/>
           </Button>
@@ -66,6 +68,7 @@ const truncateText = (text, limit) => {
             Delete
           </Button>
           )}
+          <Link to={`/posts/${post._id}`} className="link" style={{color:'#1976D2'}} ><ArrowDropDownIcon fontSize='large'/></Link>
         </CardActions>
     </Card>
   )
